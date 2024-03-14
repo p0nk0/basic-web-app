@@ -70,6 +70,38 @@ export default function QueryProcessor(query: string): string {
       );
     }
   }
+  else if (query.toLowerCase().includes("prime")) {
+
+    //chatgpt wrote this
+    function isPrime(num) {
+      if (num <= 1) {
+        return false;
+      }
+
+      // Check for divisibility from 2 to the square root of the number
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+          if (num % i === 0) {
+              return false;
+          }
+      }
+
+      return true;
+    }
+
+    let nums = query.slice(query.indexOf(":") + 1, query.indexOf("?"));
+    let nums1 = nums.split(", ");
+    let nums2 = nums1.map(item => parseInt(item.trim()));
+    let nums3 = nums2.filter(num => (isPrime(num)))
+    console.log(nums);
+    console.log(nums1);
+    console.log(nums2);
+    console.log(nums3);
+    if (nums3.length > 0) {
+      return (
+        (nums3[0]).toString()
+      );
+    }
+  }
   
 
 
