@@ -57,7 +57,7 @@ export default function QueryProcessor(query: string): string {
   }
   else if (query.toLowerCase().includes("square and a cube")) {
     let nums = query.slice(query.indexOf(":") + 1, query.indexOf("?"));
-    let nums1 = nums.split(" plus ");
+    let nums1 = nums.split(", ");
     let nums2 = nums1.map(item => parseInt(item.trim()));
     let nums3 = nums2.filter(num => (Math.sqrt(num) % 1 === 0) && (Math.cbrt(num) % 1 === 0))
     console.log(nums);
