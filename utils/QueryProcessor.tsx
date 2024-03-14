@@ -47,7 +47,7 @@ export default function QueryProcessor(query: string): string {
     console.log(nums1);
     console.log(nums2);
     return (
-      (nums2[0] + nums2[1]).toString()
+      (nums2.reduce((acc, curr) => acc + curr, 0)).toString()
     );
   }
   else if (query.toLowerCase().includes("times")) {
