@@ -41,10 +41,11 @@ export default function QueryProcessor(query: string): string {
     console.log(nums);
     console.log(nums1);
     console.log(nums2);
-    
-    return (
-      (nums3[0]).toString()
-    );
+    if (nums3.length > 0) {
+      return (
+        (nums3[0]).toString()
+      );
+    }
   }
   
 
