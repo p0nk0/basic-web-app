@@ -102,6 +102,16 @@ export default function QueryProcessor(query: string): string {
       );
     }
   }
+  else if (query.toLowerCase().includes("to the power of")) {
+    let nums = query.slice(query.indexOf("is") + 2, query.indexOf("?"));
+    let nums1 = nums.split(" to the power of ");
+    let nums2 = nums1.map(item => parseInt(item.trim()));
+    console.log(nums);
+    console.log(nums1);
+    console.log(nums2);
+    return (
+      (Math.pow(nums2[0],nums2[1])).toString()
+    );
   
 
 
